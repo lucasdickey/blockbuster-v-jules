@@ -1,5 +1,6 @@
 import React, { createContext, useState } from 'react';
 import { getRandomPiece, clearCompletedLines } from '../utils/gameLogic';
+import { initialBoard, initialPieces } from '../utils/boardPresets';
 
 type GameState = {
   board: number[][];
@@ -16,8 +17,8 @@ type GameContextType = {
 const GameContext = createContext<GameContextType | null>(null);
 
 const initialGameState = {
-  board: Array(8).fill(null).map(() => Array(8).fill(0)),
-  pieces: [getRandomPiece(), getRandomPiece(), getRandomPiece()],
+  board: initialBoard,
+  pieces: initialPieces,
   score: 0,
 };
 
